@@ -1,0 +1,66 @@
+.heading{
+    color: rgb(250, 142, 0)
+}
+
+.quickMenu_Links {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+.quickMenu_Items {
+    padding: 0 8px;
+    text-align: center;
+    flex: 1 1;
+    padding-top: 20px;
+}
+
+.quickMenu_Items img{
+    display: block;
+    width: 80%;
+    max-width: 36px;
+    height: auto;
+    margin: auto;
+}
+
+.quickMenu_Items span{
+    display: block;
+    padding-top: 12px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.container{
+    
+    width: 100vw;
+    max-width: 500px;
+    background-color: #fff;
+    margin: 0 auto;
+
+}
+
+.home_logo{
+    margin-top: 80px;
+    margin-left: 50px;
+}
+
+.home_searchBar{
+    margin-top: 24px;
+    width: 100%;
+    height: 48px;
+    position: relative;
+    border: #ff6900 solid 3px;
+}
+
+.home_searchBar > input{
+    width: 85%;
+    height: 100%;
+    padding: 0 40px 0 16px;
+    font-size: 16px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    border: none;
+    box-shadow: inset 0 0 0 1000px #fff;
+}   
