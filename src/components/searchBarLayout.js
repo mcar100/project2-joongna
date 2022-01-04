@@ -4,7 +4,7 @@ import{
 } from './layout.module.css'
 
 
-const BarLayout = () => {
+const SearchBarLayout = () => {
 
   return (
     <div className={home_searchBar}>
@@ -12,4 +12,4 @@ const BarLayout = () => {
     </div>
   )
 }
-export default BarLayout
+export default SearchBarLayout

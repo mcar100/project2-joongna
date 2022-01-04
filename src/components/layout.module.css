@@ -1,3 +1,7 @@
+body{
+    font-family: "Spoqa Han Sans Neo","Sans-serif";
+}
+
 .heading{
     color: rgb(250, 142, 0)
 }
@@ -5,7 +9,7 @@
 .quickMenu_Links {
     display: flex;
     list-style: none;
-    padding-left: 0;
+    padding: 0 20px 0 20px;
   }
   
 .quickMenu_Items {
@@ -63,4 +67,132 @@
     letter-spacing: normal;
     border: none;
     box-shadow: inset 0 0 0 1000px #fff;
-}   
+}
+
+.home_searchBar > input:focus{
+    outline: none;
+}
+
+.category_wrap{
+    max-width: 100%;
+    font-size: 17px;
+    line-height: 56px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+}
+
+.category_title{
+    margin: 0 auto;
+}
+
+.category_box{
+    align-items: center;
+    justify-content: start;
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.category_box > img{
+    width: 24px;
+    height: auto;
+} 
+
+button{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    font-size: 0;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-appearance: none; 
+    cursor: pointer;
+}
+
+.iconBtn{
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    position: relative;
+    background-size: 400px auto;
+    background-repeat: no-repeat;
+    background-image: url('../Icon/sprite_header.png');
+    
+}
+
+.icClose{
+    background-position: -80px 0;
+}
+
+.icBack{
+    background-position: 0 0;
+}
+
+.head_bar div{
+    margin: 0;
+    border: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.head_bar{
+    max-width: 100%;
+    font-size: 17px;
+    line-height: 56px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    border-bottom: #ff6900 solid 3px;
+    margin-bottom: 10px;
+}
+
+.product_info_price{
+    vertical-align: middle;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.product_info_date{
+    margin-top: 10px;
+    color: #979797;
+    position: relative;
+    font-size: 15px;
+}
+
+.product_info_body{
+    padding-top: 10px;
+    margin-bottom: 10px;
+    color: #979797;
+    font-size: 18px;
+}
+
+.product_info_etc > p{
+    padding-right: 20px;
+    color: #979797;
+    font-size: 14px;
+}
+
+.product_list_item {
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 16px 0 0;
+
+}
+
+.product_list_item > div{
+    position: relative;
+    min-height: 40px;
+    width: calc(100% - 25px);
+    font-size: 16px;
+    color: #333;
+    line-height: 1;
+    overflow: hidden;
+    padding-left: 20px;
+}

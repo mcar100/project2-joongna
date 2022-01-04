@@ -1,9 +1,12 @@
 import * as React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { navigate } from 'gatsby'
 import{
     container,
+    icBack,
+    head_bar,
 } from './layout.module.css'
+import ButtonLayout from './buttonLayout.js'
+import SearchBarLayout from './searchBarLayout.js'
 
 
 const ProductLayout = ({ pageTitle, children }) => {
@@ -22,10 +25,9 @@ const ProductLayout = ({ pageTitle, children }) => {
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
       <main>
       <nav>
-        <div>
-          <button onClick={()=> navigate(-1)}>
-            뒤로가기
-          </button>
+        <div className={head_bar}>
+          <ButtonLayout option={icBack}/>
+          <SearchBarLayout/>
         </div>
       </nav>
         {children}

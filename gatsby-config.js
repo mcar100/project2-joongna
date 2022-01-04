@@ -13,7 +13,14 @@ module.exports = {
       options:{
         name: `product`,
         path: `${__dirname}/product`,
-      }
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options:{
+        name: `Icon/category`,
+        path: `${__dirname}/src/Icon/category`,
+      },     
     },
     {
       resolve: `gatsby-transformer-remark`,

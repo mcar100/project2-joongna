@@ -3,6 +3,12 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import ProductLayout from '../../components/productLayout'
+import { 
+  product_info_price,
+  product_info_date, 
+  product_info_body,
+  product_info_etc,     
+} from '../../components/layout.module.css'
 
 const ProductPost = ({ data }) => {
     const image = getImage(data.mdx.frontmatter.hero_image);
@@ -10,19 +16,19 @@ const ProductPost = ({ data }) => {
 
     return (
       <ProductLayout pageTitle={title}>   
-        <img
-          src={image}
-          alt={data.mdx.frontmatter.hero_image_alt}
-        />
-        <h1>{title}</h1>
-        <div>카테고리: {data.mdx.frontmatter.category}</div>
-        <div>가격: {data.mdx.frontmatter.price}</div>
-        <div>등록일자: {data.mdx.frontmatter.date}</div>
-        <div>전화번호: {data.mdx.frontmatter.phone}</div>
-        <div>거주지: {data.mdx.frontmatter.place}</div>
+        <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt}/>
+        <h3>{title}</h3>
+        <strong className={product_info_price}>{data.mdx.frontmatter.price}</strong>
+          <p className={product_info_date}>{data.mdx.frontmatter.date}</p>
+        <p className={product_info_body}>상품설명</p>
         <MDXRenderer>
           {data.mdx.body}
         </MDXRenderer>
+        <div className={product_info_etc}>
+          <p>tel: {data.mdx.frontmatter.phone}</p>
+          <p>adr: {data.mdx.frontmatter.place}</p>
+        </div>
+
       </ProductLayout>
     )
   }
@@ -37,10 +43,12 @@ export const query = graphql`
         place
         phone
         date
-        category
         hero_image_alt
-        hero_image
-        
+        hero_image {
+          childImageSharp{
+            gatsbyImageData
+          }
+        }
       }
     }
   }

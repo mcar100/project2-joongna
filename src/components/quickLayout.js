@@ -3,9 +3,9 @@ import { Link } from 'gatsby'
 import{ quickMenu_Links } from './layout.module.css'
 import CategoryLayout from './categoryLayout'
 
-import SportIcon from "../images/sports.png"
-import ClothIcon from "../images/clothing.png"
-import MobileIcon from "../images/mobile.png"
+import SportIcon from "../Icon/category/스포츠.png"
+import ClothIcon from "../Icon/category/패션의류.png"
+import MobileIcon from "../Icon/category/모바일,태블릿.png"
 
 
 // quick category bar layout
@@ -13,7 +13,6 @@ const QuickLayout = () => {
 
   return (
       <ul className={quickMenu_Links}>
-          <Link to ="/product/productList">product</Link>
           <CategoryLayout link="/search/category" src={SportIcon} >스포츠</CategoryLayout>
           <CategoryLayout link="/search/category" src={ClothIcon} >패션의류</CategoryLayout>          
           <CategoryLayout link="/search/category" src={MobileIcon} >모바일/태블릿</CategoryLayout>

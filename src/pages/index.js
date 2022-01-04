@@ -4,7 +4,7 @@ import {
   home_logo,
   container,
  } from '../components/layout.module.css'
-import BarLayout from "../components/barLayout"
+import SearchBarLayout from "../components/searchBarLayout"
 import QuickLayout from "../components/quickLayout"
 
 
@@ -18,11 +18,11 @@ const IndexPage = () => {
         <StaticImage 
           className={home_logo}
           alt="Joongo Nara Logo" 
-          src="../images/front_full.png" 
+          src="../Icon/front_full.png" 
           placeholder="none"
           width={400}
           heigh={58}/>
-        <BarLayout/>
+        <SearchBarLayout/>
         <QuickLayout/>
         </main>   
       </div>
