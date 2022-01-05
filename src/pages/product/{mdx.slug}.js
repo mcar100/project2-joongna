@@ -17,16 +17,19 @@ const ProductPost = ({ data }) => {
     return (
       <ProductLayout pageTitle={title}>   
         <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt}/>
+        
         <h3>{title}</h3>
         <strong className={product_info_price}>{data.mdx.frontmatter.price}</strong>
-          <p className={product_info_date}>{data.mdx.frontmatter.date}</p>
+        <p className={product_info_date}>{data.mdx.frontmatter.date}</p>
         <p className={product_info_body}>상품설명</p>
+
         <MDXRenderer>
           {data.mdx.body}
         </MDXRenderer>
+
         <div className={product_info_etc}>
-          <p>tel: {data.mdx.frontmatter.phone}</p>
           <p>adr: {data.mdx.frontmatter.place}</p>
+          <p>tel: {data.mdx.frontmatter.phone}</p>
         </div>
 
       </ProductLayout>

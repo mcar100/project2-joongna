@@ -7,7 +7,6 @@ import {
 import SearchBarLayout from "../components/searchBarLayout"
 import QuickLayout from "../components/quickLayout"
 
-
 // markup
 const IndexPage = () => {
 
