@@ -196,3 +196,17 @@ button{
     overflow: hidden;
     padding-left: 20px;
 }
+
+.product_list_item > img{
+    height: 100px;
+    width: 130px;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.product_info_img{
+    width: 500px;
+    height: 400px;
+    max-height: 500px;
+    max-width: 500px;
+}

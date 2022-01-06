@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import{
     container,
     icBack,
@@ -10,19 +9,10 @@ import SearchBarLayout from './searchBarLayout.js'
 
 
 const ProductLayout = ({ pageTitle, children }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
     <div className={container}>
-      <title>{pageTitle} | {data.site.siteMetadata.title}</title>
+      <title>{pageTitle}</title>
       <main>
       <nav>
         <div className={head_bar}>
