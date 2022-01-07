@@ -99,7 +99,7 @@ body{
     height: auto;
 } 
 
-button{
+.buttonLayout{
     display: inline-block;
     padding: 0;
     margin: 0;
@@ -150,6 +150,19 @@ button{
     display: flex;
     border-bottom: #ff6900 solid 3px;
     margin-bottom: 10px;
+}
+
+.bottom_bar{
+    position: relative;
+    bottom: 0;
+    width: 506px;
+    border: #ff6900 solid 3px;
+    background-color: #ff6900;
+    margin-bottom: 30px;
+    text-align: center;
+    color:#fff;
+    left: 0;
+    right: 0;
 }
 
 .product_info_price{

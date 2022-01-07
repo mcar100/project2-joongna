@@ -9,7 +9,7 @@ const CategoryLayout = ({ link, src, children }) => {
 
   return (
           <li className={quickMenu_Items}>
-              <Link to={link}
+              <Link to={link} state={{category: children}}
                     style={{textDecoration: 'none', color: 'black'}}>
                   <img src={src} alt={children}/>
                   <p>{children}</p>

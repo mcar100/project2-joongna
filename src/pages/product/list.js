@@ -3,19 +3,42 @@ import { Link } from 'gatsby'
 import ProductLayout from '../../components/productLayout'
 import { product_list_item, product_info_date
  } from '../../components/layout.module.css'
+ //import db from "../../database/data.json"
+import Data from "../../db"
+import BottomBar from '../../components/bottomBar'
+import { useSelector, useDispatch } from 'react-redux'
+import { addToList } from '../../components/redux_practice'
 
-const List = () => {
-    const [lists,setLists] = useState(null)
+
+const List = ({location}) => {
+    const [lists,setLists] = useState();
+    //const [compare,setCompare] = useState(null);
+
     useEffect(()=>{
-      setLists(getData())
+      setLists(getData());
     },[])
-    console.log(lists);
+
+    const getData = ()=>{
+      return Data;
+    }
 
     return (
-      
       <ProductLayout>
       {
-         lists&&lists.map((state) =>( 
+         lists&&lists
+         .filter((state)=>{
+          if( location.state.text === undefined)
+             return state
+          else if(state.title.toLowerCase().includes(location.state.text.toLowerCase()))
+             return state
+         })
+         .filter((state)=>{
+          if(location.state.category === undefined)
+            return state
+          else if(location.state.category.toLowerCase().includes(state.categories.toLowerCase()))
+            return state
+         })
+         .map((state) =>( 
             <Link to={`/product/detail`} 
             style={{ textDecoration: 'none'}} 
             key={state.id}
@@ -39,45 +62,12 @@ const List = () => {
                     <p className={product_info_date}>{state.date}</p>
                   </div>
               </div>    
-              </Link>
+            </Link>
           ))
       }
+      <BottomBar/>
       </ProductLayout>
     )
-  }
-
-  const getData = ()=>{
-    return [{
-        id:1,
-        title: "중고 삼성갤럭시노트10",
-        date: "2021.12.31 15:12:50",
-        category: ["모바일"],
-        price: "250,000",
-        place: "서울 강남구 선릉로67",
-        phone: "010-1111-2222",
-        image: `mark-chan-Ilm-7E0g3ro-unsplash.jpg`,
-        image_alt: "삼갤노트10",
-        image_credit_text: "mark-chan-iLm",
-        image_credit_link: "https://unsplash.com/s/photos/samsung-galaxy-note-10",
-        body: `사용한지 1년밖에 안되서 상태는 멀쩡합니다. 
-               관심있으신분은 연락주세요.`,
-    },
-    {
-        id:2,
-        title: "중고 아이폰 팝니다.",
-        date: "2021.1.2 15:12:50",
-        categories: ["컴퓨터"],
-        price: "350,000",
-        place: "경기도 시흥시",
-        phone: "010-2222-3333",
-        image: `kevin-bhagat-Co-usQ-kpO0-unsplash.jpg`,
-        image_alt: "아이폰",
-        image_credit_text: "kevin bhagat",
-        image_credit_link: "https://unsplash.com/photos/Co-usQ-kpO0",
-        body: `256기가 용량입니다. 사용하지 2년정도 된 핸드폰입니다. 
-              상태는 꺠끗하며, 충전기도 같이 드립니다. 
-              관심있으면 연락해주세요.`,
-    }]
   }
 
 export default List
